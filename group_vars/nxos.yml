@@ -4,8 +4,8 @@ provider: "{{ cli }}"
 
 cli:
   host: "{{ inventory_hostname }}"
-  username: ansible
-  password: NORX_lab18
+  username: "{{ nxos_cli_user | default('admin') }}"
+  password: "{{ nxos_cli_pass | default('admin') }}"
   transport: cli
 
 nxapi:
@@ -18,3 +18,4 @@ nxapi:
 # NTP device specific settings
 #
 ntp_source_interface: mgmt0
+
