@@ -1,0 +1,8 @@
+---
+provider: "{{ cli }}"
+
+cli:
+  host: "{{ inventory_hostname }}"
+  username: ansible
+  password: NORX_lab18
+  transport: cli

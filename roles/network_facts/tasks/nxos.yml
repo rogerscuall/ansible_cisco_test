@@ -1,0 +1,28 @@
+---
+- name: collect output from nxos device
+  nxos_command:
+    commands:
+      - show version | json
+      - show running-config all
+    host: "{{ inventory_hostname }}"
+    username: ansible
+    transport: cli
+  register: output
+
+# common facts
+#
+
+- name: set hostname fact
+  set_fact: hostname="{{ output.stdout[0].host_name }}"
+
+- name: set version fact
+  set_fact: version="{{ output.stdout[0].rr_sys_ver }}"
+
+- name: set config fact
+  set_fact: config="{{ output.stdout[1] }}"
+
+- name: set config_lines fact
+  set_fact: config_lines="{{ config.split('\n') }}"
+
+
+
