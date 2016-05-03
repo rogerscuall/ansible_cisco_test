@@ -3,10 +3,6 @@
   hosts: "{{ devices | default('all') }}"
   gather_facts: no
   connection: local
-  no_log: yes
 
   roles:
     - network_facts
-
-  tasks:
-    - debug: var=config_lines
