@@ -5,3 +5,4 @@
     - files: "{{ device_os }}.yml"
       skip: true
       paths: tasks
+  no_log: yes
