@@ -1,7 +1,7 @@
 ---
 - name: collect output from nxos device
   nxos_config:
-    lines: voice_acl
+    lines: "{{ voice_acl }}"
     parents: ['ip access-list TESTING_NOW']
     before: ['no ip access-list TESTING_NOW']
     match: exact
