@@ -16,5 +16,7 @@
   set_fact: hostname="{{ output.stdout[2] | regex_search('hostname (.+)', '\\1') | first }}"
 - name: set interfaces fact
   set_fact: interfaces="{{ output.stdout[1] | regex_findall('^[L|G|A|B|C|D||M|N|P|T|V]\\S+') }}"
+- name: set version fact
+  set_fact: version="{{ output.stdout[0] | regex_search('Version (\\S+),', '\\1') | first }}"
 - name: Test fact
-  debug: var=interfaces
+  debug: var=version
