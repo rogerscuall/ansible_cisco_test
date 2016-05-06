@@ -11,4 +11,4 @@
 # common facts
 #
 - name: Test debug
-  debug: var=output
+  debug: var=output.stdout[2]
