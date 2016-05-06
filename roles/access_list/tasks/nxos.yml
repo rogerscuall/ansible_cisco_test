@@ -1,7 +1,11 @@
 ---
 - name: collect output from nxos device
-  nxos_template:
-    backup: yes
+  nxos_config:
+    lines: voice_acl
+    parents: ['ip access-list TESTING_NOW']
+    before: ['no ip access-list TESTING_NOW']
+    match: exact
+    replace: block
     host: "{{ inventory_hostname }}"
     username: ansible
     transport: cli

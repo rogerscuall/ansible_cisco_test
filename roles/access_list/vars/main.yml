@@ -1,2 +1,5 @@
 ---
-# vars file for /Users/rgomez/Documents/GitHub/ansible_cisco_test/roles/access_list
+voice_acl:
+  - permit tcp any any
+  - permit upd any any
+  - permit ip any any
