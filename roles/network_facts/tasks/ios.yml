@@ -10,9 +10,11 @@
 
 # common facts
 #
-- name: Test debug
-  debug: var=output.stdout[2]
+#- name: Test debug
+#  debug: var=output.stdout[2]
 - name: set hostname fact
-  set_fact: hostname="{{ (output.stdout[2] | regex_search('hostname (.+)', '\\1') | first) }}"
+  set_fact: hostname="{{ output.stdout[2] | regex_search('hostname (.+)', '\\1') | first }}"
+- name: set interfaces fact
+  set_fact: interfaces="{{ output.stdout[1] | regex_findall('^[L|G|A|B|C|D||M|N|P|T|V]\\S+') }}"
 - name: Test fact
-  debug: var=hostname
+  debug: var=interfaces
