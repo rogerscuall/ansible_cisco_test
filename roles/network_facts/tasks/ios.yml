@@ -13,4 +13,4 @@
 #- name: Test debug
 #  debug: var=output.stdout[2]
 - name: set hostname fact
-  set_fact: hostname="{{ (my_var | regex_search('hostname (.+)$', '\\1') | first).split('\\n')[0] }}
+  set_fact: hostname="{{ (my_var | regex_search('hostname (.+)$', '\\1') | first) }}
