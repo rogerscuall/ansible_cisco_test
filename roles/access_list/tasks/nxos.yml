@@ -1,7 +1,7 @@
 ---
 - name: collect output from nxos device
   nxos_template:
-    src: access_list.j2
+    backup: yes
     host: "{{ inventory_hostname }}"
     username: ansible
     transport: cli
