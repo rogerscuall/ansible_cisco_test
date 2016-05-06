@@ -1,2 +1,7 @@
 ---
-# tasks file for /Users/rgomez/Documents/GitHub/ansible_cisco_test/roles/access_list
+- name: "include {{ device_os }} tasks"
+  include: "{{ item }}"
+  with_first_found:
+    - files: "{{ device_os }}.yml"
+      skip: true
+      paths: tasks

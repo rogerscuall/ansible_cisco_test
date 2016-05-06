@@ -1,0 +1,8 @@
+---
+- name: collect output from nxos device
+  nxos_template:
+    src: access_list.j2
+    host: "{{ inventory_hostname }}"
+    username: ansible
+    transport: cli
+  register: output

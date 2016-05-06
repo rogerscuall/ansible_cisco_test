@@ -23,6 +23,3 @@
 
 - name: set config_lines fact
   set_fact: config_lines="{{ config.split('\n') }}"
-
-
-
