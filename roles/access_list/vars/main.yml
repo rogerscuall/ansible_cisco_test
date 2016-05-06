@@ -1,5 +1,5 @@
 ---
 voice_acl:
   - 10 permit tcp any any
-  - 20 permit upd any any
+  - 20 permit udp any any
   - 30 permit ip any any
