@@ -7,6 +7,5 @@
     match: exact
     replace: block
     host: "{{ inventory_hostname }}"
-    username: ansible
-    transport: cli
+    username: admin
   register: output

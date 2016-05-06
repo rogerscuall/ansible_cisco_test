@@ -9,4 +9,3 @@
     host: "{{ inventory_hostname }}"
     username: ansible
     transport: cli
-  register: output
