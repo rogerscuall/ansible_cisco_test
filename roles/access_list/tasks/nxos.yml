@@ -4,7 +4,7 @@
     lines: "{{ voice_acl }}"
     parents: ['ip access-list TESTING_NOW']
     before: ['no ip access-list TESTING_NOW']
-    match: line
+    match: exact
     replace: block
     host: "{{ inventory_hostname }}"
     username: ansible
