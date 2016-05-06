@@ -18,5 +18,7 @@
   set_fact: interfaces="{{ output.stdout[1] | regex_findall('^[L|G|A|B|C|D||M|N|P|T|V]\\S+') }}"
 - name: set version fact
   set_fact: version="{{ output.stdout[0] | regex_search('Version (\\S+),', '\\1') | first }}"
-- name: Test fact
-  debug: var=version
+- name: set config fact
+  set_fact: config="{{ output.stdout[2] }}"
+- name: set config_lines fact
+  set_fact: config_lines="{{ config.split('\n') }}"
