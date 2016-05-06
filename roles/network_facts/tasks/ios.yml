@@ -10,7 +10,7 @@
 
 # common facts
 #
-#- name: Test debug
-#  debug: var=output.stdout[2]
+- name: Test debug
+  debug: var=output.stdout[2]
 - name: set hostname fact
-  set_fact: hostname="{{ (output.stdout[2] | regex_search('hostname (.+)$', '\\1') | first) }}"
+  set_fact: hostname="{{ (output.stdout[2] | regex_search('hostname (.+)', '\\1') | first) }}"
